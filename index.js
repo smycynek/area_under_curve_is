@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 
 class Bounds {
     // Bounds class
