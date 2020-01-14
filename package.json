@@ -1,6 +1,6 @@
 {
   "name": "area_under_curve_js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple area under curve package",
   "main": "index.js",
   "author": "Steven Mycynek",
@@ -8,5 +8,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/smycynek/area_under_curve_js.git"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0"
   }
 }

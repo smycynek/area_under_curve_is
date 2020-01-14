@@ -6,9 +6,9 @@ const polynomial = new area.Polynomial(new Map([[3, 1], [1, 1]])); // y = x^3 + 
 let algorithm = area.simpson;
   
 
-console.log(`Area under ${polynomial} with bounds ${bounds} with algorithm ${algorithm.name} is ${area.area_under_curve(polynomial, bounds, algorithm)}.`);
+console.log(`Area under ${polynomial} with bounds ${bounds} with algorithm ${algorithm.name} is ${area.areaUnderCurve(polynomial, bounds, algorithm)}.`);
 algorithm = area.trapezoid;
-console.log(`Area under ${polynomial} with bounds ${bounds} with algorithm ${algorithm.name} is ${area.area_under_curve(polynomial, bounds, algorithm)}.`);
+console.log(`Area under ${polynomial} with bounds ${bounds} with algorithm ${algorithm.name} is ${area.areaUnderCurve(polynomial, bounds, algorithm)}.`);
 algorithm = area.midpoint;
-console.log(`Area under ${polynomial} with bounds ${bounds} with algorithm ${algorithm.name} is ${area.area_under_curve(polynomial, bounds, algorithm)}.`);
+console.log(`Area under ${polynomial} with bounds ${bounds} with algorithm ${algorithm.name} is ${area.areaUnderCurve(polynomial, bounds, algorithm)}.`);
 
