@@ -4,5 +4,9 @@
   "description": "Simple area under curve package",
   "main": "index.js",
   "author": "Steven Mycynek",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smycynek/area_under_curve_js.git"
+  }
 }
