@@ -1,6 +1,6 @@
 {
   "name": "area-under-curve",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple area under curve package",
   "main": "index.js",
   "author": "Steven Mycynek",
