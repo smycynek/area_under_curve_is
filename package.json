@@ -1,8 +1,9 @@
 {
   "name": "area-under-curve",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Simple area under curve package",
-  "main": "auc.js",
+  "main": "area.js",
+  "keywords" : ["area", "integration", "Riemann", "calculus"],
   "author": "Steven Mycynek",
   "license": "MIT",
   "repository": {

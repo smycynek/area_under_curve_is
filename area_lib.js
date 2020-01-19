@@ -1,9 +1,9 @@
 /* eslint-disable no-restricted-syntax */
-
+const algo = require('./algorithm.js');
 
 class Bounds {
     // Bounds class
-    constructor(lowerBound, upperBound, stepSize) {
+    constructor(lowerBound, upperBound, stepSize = 0.1) {
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
         this.stepSize = stepSize;
@@ -117,7 +117,7 @@ class Polynomial {
     }
 }
 
-function areaUnderCurve(poly, bounds, algorithm) {
+function areaUnderCurve(poly, bounds = new Bounds(0, 3, 0.1), algorithm = algo.midpoint) {
     // Finds the area under a polynomial between the specified bounds
     // using a rectangle-sum (of width 1) approximation.
     const rangeUpperIndex = bounds.fullRange.length - 1;
