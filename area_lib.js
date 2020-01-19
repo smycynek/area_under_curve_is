@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 
+
 class Bounds {
     // Bounds class
     constructor(lowerBound, upperBound, stepSize) {
@@ -7,10 +8,10 @@ class Bounds {
         this.upperBound = upperBound;
         this.stepSize = stepSize;
         if (this.stepSize <= 0) {
-            throw new Error({ type: 'value', message: 'invalid step size' });
+            throw new Error('invalid step size');
         }
         if (this.upperBound <= this.lowerBound) {
-            throw new Error({ type: 'value', message: 'invalid bounds' });
+            throw new Error('invalid bounds');
         }
         this.fullRange = Bounds.floatRange(lowerBound, upperBound, stepSize);
     }
@@ -59,7 +60,7 @@ class Polynomial {
         this.coefficientMap = coefficientMap;
 
         if (anyNegative([...coefficientMap.keys()])) {
-            throw new Error({ type: 'value', message: 'only positive exponents supported' });
+            throw new Error('only positive exponents supported');
         }
         this.fractionalExponents = anyNonIntNumbers([...coefficientMap.keys()]);
     }
@@ -106,7 +107,7 @@ class Polynomial {
         for (const degree of this.coefficientMap.keys()) {
             const coefficient = this.coefficientMap.get(degree);
             if (this.fractionalExponents != null && value < 0) {
-                throw new Error({ type: 'value', message: 'Fractional exponents not supported for negative inputs.' });
+                throw new Error('Fractional exponents not supported for negative inputs.');
             }
             const currentTerm = (value ** degree) * coefficient;
 
@@ -114,29 +115,6 @@ class Polynomial {
         }
         return total;
     }
-}
-
-// Algorithms and utilities
-
-function midpoint(poly, lower, upper) {
-    // Calculate midpoint slice from two polynomial evaluations and step size
-    const value = poly.evaluate((upper + lower) / 2.0);
-    return (upper - lower) * value;
-}
-
-function trapezoid(poly, lower, upper) {
-    // Calculate trapezoid slice from two polynomial evaluations and step size
-    const lowerValue = poly.evaluate(lower);
-    const upperValue = poly.evaluate(upper);
-    return (upper - lower) * ((lowerValue + upperValue) / 2.0);
-}
-
-function simpson(poly, lower, upper) {
-    // Calculate parabola (Simpson) slice from two polynomial evaluations and step size
-    const lowerValue = poly.evaluate(lower);
-    const upperValue = poly.evaluate(upper);
-    const midpointValue = poly.evaluate((lower + upper) / 2.0);
-    return ((upper - lower) / 6.0) * (lowerValue + 4 * midpointValue + upperValue);
 }
 
 function areaUnderCurve(poly, bounds, algorithm) {
@@ -159,6 +137,3 @@ function areaUnderCurve(poly, bounds, algorithm) {
 exports.areaUnderCurve = areaUnderCurve;
 exports.Polynomial = Polynomial;
 exports.Bounds = Bounds;
-exports.simpson = simpson;
-exports.midpoint = midpoint;
-exports.trapezoid = trapezoid;

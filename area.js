@@ -5,10 +5,16 @@
 const area = require('./area_lib.js');
 const argUtil = require('./arg_util.js');
 
-const params = argUtil.getParams();
+let parms = null;
+try {
+    params = argUtil.getParams();
+} catch (err) {
+    console.log(err.message);
+    process.exit(1);
+}
 const bounds = new area.Bounds(params.lower, params.upper, params.step);
-const algorithm = eval(`area.${params.algorithm}`);
 const polynomial = new area.Polynomial(params.polynomialData);
+const algorithm = params.algorithm;
 
 console.log(
     `Area under ${polynomial} with bounds ${bounds} 
