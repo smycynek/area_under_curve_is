@@ -106,7 +106,7 @@ class Polynomial {
         let total = 0;
         for (const degree of this.coefficientMap.keys()) {
             const coefficient = this.coefficientMap.get(degree);
-            if (this.fractionalExponents != null && value < 0) {
+            if ((this.fractionalExponents === true) &&( value < 0)) {
                 throw new Error('Fractional exponents not supported for negative inputs.');
             }
             const currentTerm = (value ** degree) * coefficient;
