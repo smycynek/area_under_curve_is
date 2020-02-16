@@ -6,7 +6,7 @@ const { ArgumentParser } = require('argparse');
 const algorithm = require('./algorithm.js');
 
 const parser = new ArgumentParser({
-    version: '1.0.10',
+    version: '1.0.15',
     addHelp: true,
     description: 'Area under a curve',
 });

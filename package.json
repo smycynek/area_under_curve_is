@@ -1,6 +1,6 @@
 {
   "name": "area-under-curve",
-  "version": "1.0.10",
+  "version": "1.0.15",
   "description": "Simple area under curve package",
   "main": "area.js",
   "keywords" : ["area", "integration", "Riemann", "calculus"],

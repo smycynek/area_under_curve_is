@@ -17,7 +17,7 @@ class Bounds {
     }
 
     toString() {
-        return `Bounds: [${this.lowerBound} - ${this.upperBound}], stepSize: ${this.stepSize}`;
+        return `[${this.lowerBound} - ${this.upperBound}], stepSize: ${this.stepSize}`;
     }
 
     static floatRange(lowerBound, upperBound, stepSize) {
